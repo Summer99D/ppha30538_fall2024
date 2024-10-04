@@ -1,0 +1,8 @@
+---
+title: "Pset-1"
+author: "Summer Negahdar"
+format: html
+---
+
+```{python}
+import pandas as pd
