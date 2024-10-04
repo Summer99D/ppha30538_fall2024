@@ -7,7 +7,7 @@ format:
     code-overlap: wrap
 execute:
   eval: true
-  echo: false
+  echo: true
 ---
 
 1. **PS1:** Due Sat Oct 5 at 5:00PM Central. Worth 50 points. 
@@ -38,6 +38,7 @@ warnings.filterwarnings('ignore')
 
 1.  
 ```{python}
+##I looked at a stackflow post to find how to do it!
 import time
 
 start_time= time.time()
@@ -47,12 +48,54 @@ data_set_1 = pd.read_csv("/Users/samarnegahdar/Documents/school/Fall quarter 202
 end_time= time.time()
 time_spent= end_time - start_time
 print("the time spent running this csv file is", time_spent)
+## The Assert statement to see if the length of dataset is 287458 rows
+assert len(data_set_1)== 287458
+print("length of dataset is:",len(data_set_1))
 ```
 
 
 1. 
+```{python}
+import os
+##I want to see how many GB are therei n the csv file:
+File_size_in_GB = os.path.getsize("/Users/samarnegahdar/Documents/school/Fall quarter 2024/Python II/ppha30538_fall2024/problem_sets/ps1/data/parking_tickets_one_percent.csv")
+print("The size of the csv file is:", File_size_in_GB, "GBs")
+##If we wanna predict how large the dataset is we have to multiply the file size by 100 (since the csv file is only 1% of the file)
+Full_size_file= File_size_in_GB * 100
+##since each Terabyte is 1024 GBs, I want to convert it to a more readable number
+Full_size_file_TB= Full_size_file / 1024
+print("Full size file is approximately",Full_size_file_TB, "TBs")
+```
 
 1.  
+I took a look at the CSV file and realized they are ordered based on date and time (issue-date column). now I wanna check if these column was supposed to be the default ordering column.
+
+```{python}
+def issue_date_ordering(data_set_1):
+    # Return True or False based on ordering
+    return data_set_1["issue_date"].is_monotonic_increasing or data_set_1["issue_date"].is_monotonic_decreasing
+
+# Use the result
+is_ordered = issue_date_ordering(data_set_1)
+if is_ordered:
+    print("The dataset is ordered by 'issue_date'.")
+else:
+    print("The dataset is not ordered by 'issue_date'.")
+
+    ##so now I have to find that one column based on which the dataset is ordered. 
+
+def find_ordering_column(dataframe):
+    for column in dataframe.columns:
+        
+        if dataframe[column].is_monotonic_increasing or dataframe[column].is_monotonic_decreasing:
+            print(f"The dataset is ordered by the column: {column}")
+            return  # I could not get the funciton right so I looked this up and it turns out adding "return" means exit the function once you have ofund one column that meets the if clause
+    print("No single column appears to order the dataset.")
+
+# Run the function
+find_ordering_column(data_set_1)
+```
+
 
 ## Cleaning the data and benchmarking (15 Points)
 
