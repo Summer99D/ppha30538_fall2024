@@ -1,0 +1,71 @@
+---
+title: "Problem Set I"
+author: "Summer(Samar) Negahdar"
+date: "October 4th, 2024"
+format: 
+  html: 
+    code-overlap: wrap
+execute:
+  eval: true
+  echo: false
+---
+
+1. **PS1:** Due Sat Oct 5 at 5:00PM Central. Worth 50 points. 
+
+We use (`*`) to indicate a problem that we think might be time consuming. 
+
+Steps to submit (5 points on PS1)
+
+1. "This submission is my work alone and complies with the 30538 integrity
+policy." Add your initials to indicate your agreement: \*\*\SN\*\*
+
+2. "I have uploaded the names of anyone I worked with on the problem set **[here](https://docs.google.com/forms/d/1-zzHx762odGlpVWtgdIC55vqF-j3gqdAp6Pno1rIGK0/edit)**"  \*\*\*\* (1 point)
+3. Late coins used this pset: \*\*\0\*\* Late coins left after submission: \*\*\_4\*\*
+4. Knit your `ps1.qmd`to HTML 
+5. Convert your HTML to PDF by printing to PDF from a browser.
+6. Submit resulting ps1.pdf to Gradescope (4 points) 
+7. Tag your submission in Gradescope
+
+```{python}
+# set up 
+import pandas as pd
+import altair as alt
+
+import warnings 
+warnings.filterwarnings('ignore')
+```
+## Read in one percent sample (15 Points)
+
+1.  
+```{python}
+import time
+
+start_time= time.time()
+
+data_set_1 = pd.read_csv("/Users/samarnegahdar/Documents/school/Fall quarter 2024/Python II/ppha30538_fall2024/problem_sets/ps1/data/parking_tickets_one_percent.csv")
+
+end_time= time.time()
+time_spent= end_time - start_time
+print("the time spent running this csv file is", time_spent)
+```
+
+
+1. 
+
+1.  
+
+## Cleaning the data and benchmarking (15 Points)
+
+1.  
+
+1.  
+
+## Visual Encoding (15 Points)
+
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
