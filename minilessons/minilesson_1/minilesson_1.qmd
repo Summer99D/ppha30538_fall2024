@@ -55,7 +55,7 @@ execute:
 
 
 ## Jupyter in VSCode
-
+g
 - Interactive Python development
 - Run code chunks individually
 - View output in-line
