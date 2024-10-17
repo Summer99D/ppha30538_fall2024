@@ -18,7 +18,7 @@
         "engine: jupyter\n",
         "---"
       ],
-      "id": "30aa129c"
+      "id": "d82be0cc"
     },
     {
       "cell_type": "code",
@@ -37,7 +37,7 @@
         "import matplotlib.pyplot as plt\n",
         "import matplotlib.image as mpimg"
       ],
-      "id": "a9747adb",
+      "id": "9e4b5418",
       "execution_count": null,
       "outputs": []
     },
@@ -83,7 +83,7 @@
         "\n",
         "## introduce dataset `diamonds`"
       ],
-      "id": "2c5d89d2"
+      "id": "be7f85c3"
     },
     {
       "cell_type": "code",
@@ -92,7 +92,7 @@
         "from plotnine.data import diamonds, mpg\n",
         "diamonds"
       ],
-      "id": "54dcd81a",
+      "id": "3b8c7aad",
       "execution_count": null,
       "outputs": []
     },
@@ -117,7 +117,7 @@
         "\n",
         "##  `diamonds` "
       ],
-      "id": "d5692da1"
+      "id": "0b1beb82"
     },
     {
       "cell_type": "code",
@@ -127,7 +127,7 @@
         "diamonds_cut = diamonds.groupby('cut').size()\n",
         "diamonds_cut"
       ],
-      "id": "d8bd39c9",
+      "id": "2b057309",
       "execution_count": null,
       "outputs": []
     },
@@ -137,7 +137,7 @@
       "source": [
         "## Categorical variables\n"
       ],
-      "id": "605af37c"
+      "id": "88f9833f"
     },
     {
       "cell_type": "code",
@@ -150,7 +150,7 @@
         "    alt.Y('N')\n",
         ")"
       ],
-      "id": "9186ab2b",
+      "id": "c98fd284",
       "execution_count": null,
       "outputs": []
     },
@@ -178,7 +178,7 @@
         "\n",
         "## movies dataset"
       ],
-      "id": "4c971f17"
+      "id": "199016a3"
     },
     {
       "cell_type": "code",
@@ -186,7 +186,7 @@
       "source": [
         "movies_url = 'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/movies.json'"
       ],
-      "id": "a33ded7d",
+      "id": "d760ad8a",
       "execution_count": null,
       "outputs": []
     },
@@ -197,7 +197,7 @@
         "#| eval: false\n",
         "movies = pd.read_json(movies_url)"
       ],
-      "id": "c47c7a7a",
+      "id": "96f7eede",
       "execution_count": null,
       "outputs": []
     },
@@ -208,7 +208,7 @@
         "#| echo: false\n",
         "movies = pd.read_json('data/movies.json')"
       ],
-      "id": "e1fdc5d2",
+      "id": "0db5cc7d",
       "execution_count": null,
       "outputs": []
     },
@@ -218,7 +218,7 @@
       "source": [
         "## recap scatter plot from lecture 3"
       ],
-      "id": "ed2042c0"
+      "id": "90f45cfa"
     },
     {
       "cell_type": "code",
@@ -229,7 +229,7 @@
         "    alt.Y('IMDB_Rating:Q')\n",
         ")"
       ],
-      "id": "13ec1fa7",
+      "id": "9be4cf06",
       "execution_count": null,
       "outputs": []
     },
@@ -241,7 +241,7 @@
         "\n",
         "## scatter plot -- N movies per bin"
       ],
-      "id": "994a4c31"
+      "id": "bac92dbd"
     },
     {
       "cell_type": "code",
@@ -252,7 +252,7 @@
         "    alt.Y('count(IMDB_Rating):Q')\n",
         ")"
       ],
-      "id": "0a984366",
+      "id": "343947ed",
       "execution_count": null,
       "outputs": []
     },
@@ -263,7 +263,7 @@
         "## scatter plot -- syntax trick\n",
         "Replace `count(IMDB_Rating)` with `count()` because we aren't using IMDB rating any more."
       ],
-      "id": "c6f2f8e5"
+      "id": "e15cf631"
     },
     {
       "cell_type": "code",
@@ -274,7 +274,7 @@
         "    alt.Y('count():Q')\n",
         ")"
       ],
-      "id": "246b86a0",
+      "id": "ace55978",
       "execution_count": null,
       "outputs": []
     },
@@ -284,7 +284,7 @@
       "source": [
         "## histogram using `mark_bar()`"
       ],
-      "id": "3dc77fe8"
+      "id": "410a1bf4"
     },
     {
       "cell_type": "code",
@@ -296,7 +296,7 @@
         ")\n",
         "hist_rt"
       ],
-      "id": "994a67a0",
+      "id": "024eb1f1",
       "execution_count": null,
       "outputs": []
     },
@@ -310,7 +310,7 @@
         "\n",
         "## histogram of IMDB ratings"
       ],
-      "id": "3544014c"
+      "id": "ebf56f69"
     },
     {
       "cell_type": "code",
@@ -322,7 +322,7 @@
         ")\n",
         "hist_imdb"
       ],
-      "id": "ccd17b81",
+      "id": "a2fee840",
       "execution_count": null,
       "outputs": []
     },
@@ -333,7 +333,7 @@
         "## Side-by-side\n",
         "Discussion question -- compare the two ratings distributions. If _your goal is to differentiate between good and bad movies_, which is more informative?\n"
       ],
-      "id": "51b1cd94"
+      "id": "5085189c"
     },
     {
       "cell_type": "code",
@@ -341,7 +341,7 @@
       "source": [
         "hist_rt | hist_imdb"
       ],
-      "id": "da6507c6",
+      "id": "24710adf",
       "execution_count": null,
       "outputs": []
     },
@@ -351,7 +351,7 @@
       "source": [
         "## introducing the penguins"
       ],
-      "id": "2b8de99f"
+      "id": "6ae9848f"
     },
     {
       "cell_type": "code",
@@ -361,7 +361,7 @@
         "penguins = load_penguins()\n",
         "display(penguins)"
       ],
-      "id": "619566a6",
+      "id": "40fac0a0",
       "execution_count": null,
       "outputs": []
     },
@@ -371,7 +371,7 @@
       "source": [
         "## histogram with steps of 200"
       ],
-      "id": "8b7584d3"
+      "id": "cc8d29c1"
     },
     {
       "cell_type": "code",
@@ -382,7 +382,7 @@
         "    alt.Y('count()')\n",
         ")"
       ],
-      "id": "847efc57",
+      "id": "1b161a77",
       "execution_count": null,
       "outputs": []
     },
@@ -394,7 +394,7 @@
         "\n",
         "20 vs 200 vs 2000\n"
       ],
-      "id": "3bab181e"
+      "id": "53ebefca"
     },
     {
       "cell_type": "code",
@@ -416,7 +416,7 @@
         "\n",
         "plot1 & plot2 & plot3"
       ],
-      "id": "d8466ab4",
+      "id": "a42e27a0",
       "execution_count": null,
       "outputs": []
     },
@@ -429,7 +429,7 @@
         "\n",
         "## numeric variable: `transform_density()` "
       ],
-      "id": "c5963f98"
+      "id": "5113b39a"
     },
     {
       "cell_type": "code",
@@ -443,7 +443,7 @@
         "    y='density:Q'\n",
         ")"
       ],
-      "id": "35240a45",
+      "id": "2bdc1a34",
       "execution_count": null,
       "outputs": []
     },
@@ -453,7 +453,7 @@
       "source": [
         "## Back to diamonds, focus on `carat`"
       ],
-      "id": "02f95664"
+      "id": "6f922827"
     },
     {
       "cell_type": "code",
@@ -466,7 +466,7 @@
         "    alt.Y('count()')\n",
         ")"
       ],
-      "id": "37afb0f2",
+      "id": "06277f32",
       "execution_count": null,
       "outputs": []
     },
@@ -476,7 +476,7 @@
       "source": [
         "## Continuous Variables"
       ],
-      "id": "2222a03c"
+      "id": "e36595aa"
     },
     {
       "cell_type": "code",
@@ -486,7 +486,7 @@
         "diamonds['bins'] = pd.cut(diamonds['carat'], bins=10)\n",
         "diamonds.groupby('bins').size()"
       ],
-      "id": "f7171574",
+      "id": "85763d18",
       "execution_count": null,
       "outputs": []
     },
@@ -496,7 +496,7 @@
       "source": [
         "## Continuous Variables: Typical Values"
       ],
-      "id": "e2d8018b"
+      "id": "d69b62d2"
     },
     {
       "cell_type": "code",
@@ -510,7 +510,7 @@
         "    alt.Y('count()')\n",
         ")"
       ],
-      "id": "fd6b512a",
+      "id": "7c5cf2a9",
       "execution_count": null,
       "outputs": []
     },
@@ -520,7 +520,7 @@
       "source": [
         "## Continuous Variables: Typical Values"
       ],
-      "id": "83da9325"
+      "id": "5b339c6a"
     },
     {
       "cell_type": "code",
@@ -531,7 +531,7 @@
         "    alt.Y('count()')\n",
         ")"
       ],
-      "id": "c391ece3",
+      "id": "7b240550",
       "execution_count": null,
       "outputs": []
     },
@@ -567,7 +567,7 @@
         "\n",
         "## Diamonds: examine unusual values\n"
       ],
-      "id": "24a148e3"
+      "id": "0a446d35"
     },
     {
       "cell_type": "code",
@@ -575,7 +575,7 @@
       "source": [
         "diamonds['y'].describe()"
       ],
-      "id": "f6887721",
+      "id": "dc5d2770",
       "execution_count": null,
       "outputs": []
     },
@@ -585,7 +585,7 @@
       "source": [
         "## Diamonds: examine unusual values "
       ],
-      "id": "dfb7fe32"
+      "id": "7bc3a7eb"
     },
     {
       "cell_type": "code",
@@ -593,7 +593,7 @@
       "source": [
         "diamonds.loc[(diamonds['y'] < 3) | (diamonds['y'] > 20)] "
       ],
-      "id": "b8541e78",
+      "id": "06abf1b2",
       "execution_count": null,
       "outputs": []
     },
@@ -603,7 +603,7 @@
       "source": [
         "## Diamonds: sanity check by comparing to 10 random diamonds"
       ],
-      "id": "d7862165"
+      "id": "1501c7f3"
     },
     {
       "cell_type": "code",
@@ -611,7 +611,7 @@
       "source": [
         "diamonds.sample(n=10)"
       ],
-      "id": "dc6f5e50",
+      "id": "a0d24a14",
       "execution_count": null,
       "outputs": []
     },
@@ -627,7 +627,7 @@
         "\n",
         "## Diamonds: option 1 for unusual values: drop"
       ],
-      "id": "88eb9b30"
+      "id": "a6ff65b0"
     },
     {
       "cell_type": "code",
@@ -636,7 +636,7 @@
         "diamonds_clean = diamonds.loc[(diamonds['y'] >= 3) | (diamonds['y'] <= 20)] \n",
         "diamonds_clean"
       ],
-      "id": "61c101eb",
+      "id": "c9c2b524",
       "execution_count": null,
       "outputs": []
     },
@@ -646,7 +646,7 @@
       "source": [
         "## Diamonds: option 2 for unusual values: missing"
       ],
-      "id": "4d233f70"
+      "id": "02caa8ca"
     },
     {
       "cell_type": "code",
@@ -656,7 +656,7 @@
         "rows_with_na_y = diamonds[diamonds['y'].isna()]\n",
         "print(rows_with_na_y)"
       ],
-      "id": "e4ebb10b",
+      "id": "361d5499",
       "execution_count": null,
       "outputs": []
     },
@@ -669,7 +669,7 @@
         "* Replace anything less than the 1st percentile with the 1st percentile\n",
         "* Replace anything more than the 99th percentile with the 99th percentile\n"
       ],
-      "id": "433ce1cd"
+      "id": "5b8c003a"
     },
     {
       "cell_type": "code",
@@ -681,7 +681,7 @@
         "print(f\"1st Percentile: {pctile01}\")\n",
         "print(f\"99th Percentile: {pctile99}\")"
       ],
-      "id": "7ac5c615",
+      "id": "d3fdd8f3",
       "execution_count": null,
       "outputs": []
     },
@@ -691,7 +691,7 @@
       "source": [
         "## Diamonds: option 3 for unusual values: winsorize"
       ],
-      "id": "60eb39e3"
+      "id": "71bc5a0e"
     },
     {
       "cell_type": "code",
@@ -701,7 +701,7 @@
         "                                np.where(diamonds['y'] > pctile99, pctile99, diamonds['y']))\n",
         "diamonds"
       ],
-      "id": "173cc2df",
+      "id": "a66fe92f",
       "execution_count": null,
       "outputs": []
     },
@@ -737,7 +737,7 @@
         "\n",
         "How do I decide whether to set to NA or winsorize? Ideally, ask your data provider what's going on with these values. \n"
       ],
-      "id": "14ca4a6b"
+      "id": "967e2b08"
     }
   ],
   "metadata": {
